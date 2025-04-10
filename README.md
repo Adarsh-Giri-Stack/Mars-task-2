@@ -10,7 +10,26 @@ so first i thought about the components i am going to use which were as follows 
   5. 9V battery
 
 Procedure:
-Potentiometer:
-terminal 1 to 5V arduino 
-terminal 2 to Gnd 
-wiper to analog pin 1
+1)Potentiometer:
+	terminal 1 to 5V arduino 
+	terminal 2 to Gnd 
+	wiper pin to analog pin 1
+2)Power Driver:
+	PWM pin to digital 6 
+  Direction pin to digital 8 
+	Gnd to Gnd of arduino 
+3)DC motor :
+	Connect to Motor pins of power driver .
+
+4)9V Battery:
+	connect to the power pins of power driver.
+
+Logic Behind The Working :
+
+The Potentiometer will be used as a nob to turn and adjust the speed and direction of the motor .
+
+
+
+ 
+	
+	
