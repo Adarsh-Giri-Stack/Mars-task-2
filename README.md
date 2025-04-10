@@ -27,6 +27,11 @@ Procedure:
 Logic Behind The Working :
 
 The Potentiometer will be used as a nob to turn and adjust the speed and direction of the motor .
+512 is set as the point of change. 
+Raw potentiometer value ranges from 0-1023
+if potentiometer value is below 512 , the motor runs in one direction 
+else the motor runs in the opposite direction .
+
 
 
 
