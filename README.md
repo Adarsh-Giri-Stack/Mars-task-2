@@ -31,6 +31,9 @@ The Potentiometer will be used as a nob to turn and adjust the speed and directi
 Raw potentiometer value ranges from 0-1023
 if potentiometer value is below 512 , the motor runs in one direction 
 else the motor runs in the opposite direction .
+we map the value of speed from raw value 0-1023 to 0-255 .
+then we print the value of speed and adjust the speed of the motor respectively.
+
 
 
 
