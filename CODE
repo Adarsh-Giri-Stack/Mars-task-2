@@ -20,7 +20,7 @@ void loop()
   POTVAL=analogRead(WIPER_PIN);      // here we are taking the value of the potentiometer 
   SPEED=map(POTVAL,0,1023,0,255);     // for speed we map it to 0to 255 
   
-  if(POTVAL>200)  
+  if(POTVAL>512)  
   {
     DIR=0;
   }
