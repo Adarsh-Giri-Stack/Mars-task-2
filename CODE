@@ -1,0 +1,51 @@
+#define WIPER_PIN A1
+#define ENABLE_PIN 6 // PWM
+#define INPUT1_PIN 8 // Direction
+int POTVAL;  //takes the raw value of the potentiometer 
+int DIR ,SPEED;   // two variables for direction and speed 
+
+void setup()
+{
+  pinMode(ENABLE_PIN, OUTPUT);
+  pinMode(INPUT1_PIN, OUTPUT);
+  pinMode(WIPER_PIN,INPUT);     // amount of turn in potentiometer
+  
+  
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  
+  POTVAL=analogRead(WIPER_PIN);      // here we are taking the value of the potentiometer 
+  SPEED=map(POTVAL,0,1023,0,255);     // for speed we map it to 0to 255 
+  
+  if(POTVAL>200)  
+  {
+    DIR=0;
+  }
+  else 
+  {
+    DIR=1;
+  }
+  drivemotor();
+  
+delay(2000);
+}
+
+void drivemotor()
+{
+  if(DIR==0)    //if potval is greater than 512 the motor runs in one direction
+  {
+    digitalWrite(INPUT1_PIN,HIGH);
+  }
+  else   //motor runs in the other direction 
+  {
+    digitalWrite(INPUT1_PIN,LOW);
+  }
+  analogWrite(ENABLE_PIN,SPEED); //here we adjust the speed of the motor
+  
+  //Serial.println(SPEED);         //printing the speed
+  Serial.println(POTVAL);
+  
+}
